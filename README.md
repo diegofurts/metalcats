@@ -4,7 +4,7 @@ This is a temporary repo to provide reproducibility to the results presented in 
 
 The datasets are available at http://timeseriesclassification.com/dataset.php
 
-Important note: this repo is temporalily anonymous for double-blind review purposes. As soon as the paper gets accepted, the authors will update the repo with better documentation and codes to use the best meta-models.
+Important note: this repo is temporalily simplified for review purposes. As soon as the paper gets accepted, the authors will update the repo with better documentation and codes to use the best meta-models.
 
 # How to use it
 ## Required packages
