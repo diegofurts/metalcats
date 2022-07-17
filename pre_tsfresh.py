@@ -9,7 +9,7 @@ import pandas as pd
 import sys
 
 from numpy import genfromtxt
-from tsfresh import extract_features
+from tsfresh.feature_extraction import extract_features, MinimalFCParameters
 
 def parser_args(cmd_args):
 
@@ -47,34 +47,7 @@ print("Extracting features")
 cols = ["id","x","y"]
 df = pd.DataFrame(teste,columns=cols)
 
-X = extract_features(df, column_id='id')
+X = extract_features(df, default_fc_parameters=MinimalFCParameters(), column_id='id')
 X.to_csv("./tsfresh/" + data_name + "_TRAIN.csv")
 print("Done!\n")
 
-
-# '''
-# Test dataset
-# '''
-# print("Loading training dataset")
-
-# file_path = "./data/" + data_name + "/" + data_name + "_TEST.tsv"
-# data = genfromtxt(file_path, delimiter='\t')
-
-# teste = []
-
-# i = 0
-# for ts in data:
-# 	for obs in ts[1:]:
-# 		teste.append([i,obs,ts[0]])
-# 	i += 1
-
-# print("Done")
-# print("Extracting features")
-
-# cols = ["id","x","y"]
-# df = pd.DataFrame(teste,columns=cols)
-
-# X = extract_features(df, column_id='id')
-# X.to_csv("./tsfresh/" + data_name + "_TEST.csv")
-
-# print("Done!\n")
